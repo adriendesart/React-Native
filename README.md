@@ -18,9 +18,8 @@ Ce workshop est réalisé dans le cadre de la formation Becode à Charleroi. Le 
 
 - Dans un premier temps nous allons créer et initier un dossier natif appelé AwesomeNativeBase et ce placer dans le dossier grâce à la commande: 
 
-	.```react-native unit AwesomeNativeBase```
-	.```cd AwesomeNativeBase```
-
+	```react-native unit AwesomeNativeBase```
+	```cd AwesomeNativeBase```
 
 
 ### Initialiser le projet:
