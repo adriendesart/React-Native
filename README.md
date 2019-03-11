@@ -16,12 +16,19 @@ Ce workshop est réalisé dans le cadre de la formation Becode à Charleroi. Le 
 ## Créer une première application React Native
 ### Les installations nécessaire:
 
-- Dans un premier temps nous allons créer et initier un dossier natif appelé AwesomeNativeBase et ce placer dans le dossier grâce à la commande: 
+1. Dans un premier temps nous allons créer et initier un dossier natif appelé AwesomeNativeBase et ce placer dans le dossier grâce à la commande: 
 
 	```react-native unit AwesomeNativeBase```
-	
-	```cd AwesomeNativeBase```
 
+	```cd AwesomeNativeBase```nsdlvsvnslnvrpvzlekvnerv^zvlkznrvgplzj,pfz;
+
+- Nous allons ensuite Installer NativeBase
+
+	```npm install native-base --save```
+
+- Ensuite configuré NativeBase avec notre app React Native: 
+
+	```react-native link```
 
 ### Initialiser le projet:
 
