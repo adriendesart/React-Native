@@ -62,6 +62,7 @@ RN permet d'utiliser et de modifier du code natif pour votre application. Vous p
 
 
 
+
 ## Exercices:
 ### Faire une application "Make your choice" (Livecoding)
 ### Faire une application "puissance4"
