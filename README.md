@@ -32,15 +32,18 @@ RN permet d'utiliser et de modifier du code natif pour votre application. Vous p
 
 ## Les mots clés important:
 
-`Component` :
+`Text` : Un composant pour afficher du texte.
 
-`Text` :
+`View` : Le composant le plus fondamental pour la construction d'une interface utilisateur.
 
-`View` :
+`Image` : Un composant pour afficher des images.
 
-`Image` :
+`ScrollView` : Fournit un conteneur de défilement pouvant héberger plusieurs composants et vues.
 
-`ScrollView` :
+`TextInput` : Un composant pour la saisie de texte dans l'application via un clavier.
+
+`StyleSheet` : Fournit une couche d'abstraction similaire aux feuilles de style CSS.
+
 
 ## Créer une première application React Native
 ### Les installations nécessaire:
