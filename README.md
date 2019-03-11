@@ -172,10 +172,6 @@ module.exports = override(
 
 	```npm start```
 
-### Initialiser le projet:
-
-
-
 ## Exercices:
 ### Faire une application "Make your choice" (Livecoding)
 ### Faire une application "puissance4"
