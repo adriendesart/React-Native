@@ -48,7 +48,7 @@ Ce workshop est réalisé dans le cadre de la formation Becode à Charleroi. Le 
 3. Créez le fichier config-overrides.js à la racine de votre projet
 
 <pre><code>
-	const path = require('path');
+const path = require('path');
 const {
   override,
   addWebpackAlias,
