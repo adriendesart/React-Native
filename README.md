@@ -188,3 +188,5 @@ module.exports = override(
 [La documentation officielle de facebook](https://facebook.github.io/react-native/)
 
 [Le github de React Native](https://github.com/facebook/react-native)
+
+[Document de l'installation](https://docs.nativebase.io/docs/GetStarted.html)
