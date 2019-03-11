@@ -37,6 +37,36 @@ RN permet d'utiliser et de modifier du code natif pour votre application. Vous p
 
 ## Créer une première application React Native
 ### Les installations nécessaire:
+
+1. Dans un premier temps nous allons créer un dossier appelez react-native et dans ce dossier initier un dossier natif appelé AwesomeNativeBase et ce placer dans le dossier grâce aux commande: 
+
+	```react-native init AwesomeNativeBase```
+
+	```cd AwesomeNativeBase```
+
+- Nous allons ensuite Installer NativeBase
+
+	```npm install native-base --save```
+
+- Ensuite configuré NativeBase avec notre app React Native: 
+
+	```react-native link```
+
+
+2. Nous allons en deuxième temps configurer avec le web pour celà revenir dans le dossier react-native :
+
+	```cd ..```
+
+	```npm install -g create-react-app```
+
+	```npx create-react-app nativebase-app```
+
+	```cd nativebase-app```
+
+	```npm i native-base react-art react-native-web --save```
+
+	```npm i react-app-rewired customize-cra @babel/plugin-proposal-class-properties --dev --save```
+
 ### Initialiser le projet:
 
 
