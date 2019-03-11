@@ -20,7 +20,7 @@ Ce workshop est réalisé dans le cadre de la formation Becode à Charleroi. Le 
 
 	```react-native unit AwesomeNativeBase```
 
-	```cd AwesomeNativeBase```nsdlvsvnslnvrpvzlekvnerv^zvlkznrvgplzj,pfz;
+	```cd AwesomeNativeBase```
 
 - Nous allons ensuite Installer NativeBase
 
