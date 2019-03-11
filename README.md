@@ -47,7 +47,8 @@ Ce workshop est réalisé dans le cadre de la formation Becode à Charleroi. Le 
 
 3. Créez le fichier config-overrides.js à la racine de votre projet
 
-	```const path = require('path');
+<pre><code>
+	const path = require('path');
 const {
   override,
   addWebpackAlias,
@@ -76,7 +77,10 @@ module.exports = override(
   addBabelPlugins(
     "@babel/plugin-proposal-class-properties"
   ),
-);```
+);
+</code></pre>
+
+
 
 ### Initialiser le projet:
 
