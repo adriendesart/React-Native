@@ -23,16 +23,25 @@ export default class Game extends React.Component {
         super(props);
         this.state = {lit: 0};
     }
-
+    
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.textBox}>
-                    <Text>Count :{mainSequence.length}</Text>
+                    <Text>Score :{mainSequence.length-1>0?mainSequence.length-1:0}</Text>
                     <Text>Best score :{bestScore}</Text>
                 </View>
+                <View>
+                    <View style={styles.gameBox}>
+                       {this._renderTiles(0)}
+                       {this._renderTiles(1)} 
+                    </View>
+                    <View style={styles.gameBox}>
+                       {this._renderTiles(2)} 
+                       {this._renderTiles(3)}  
+                    </View>
+                </View>
                 <Button title="PLAY!" onPress={()=>this._resetTheGame()}/>
-                {this._renderTiles()}
             </View>
         );
     }
@@ -42,60 +51,52 @@ export default class Game extends React.Component {
         this.setState({lit: 0});
         let startColor = random(1, 4);
         mainSequence.push(startColor);
-        currSequence = mainSequence.slice(0);
-        this._playNotes(mainSequence);
+        currSequence = [];
+        this._playColor(mainSequence);
     }
 
     _playTheGame=(id)=> {
         let gameOver = false;
-    
-        if (currSequence.shift() !== id) {
-            gameOver = true;
-            Alert.alert("Try Again!")
+        currSequence.push(id);
+        for(i=0;i<currSequence.length;i++){
+            if(currSequence[i]!=mainSequence[i]){
+                gameOver = true;
+                Alert.alert("Try Again!")
+            }
         }
-    
-        if (!gameOver && currSequence.length === 0) {
+        if (gameOver == false && (currSequence.length == mainSequence.length)){
+            currSequence = [];
             mainSequence.push(random(1, 4));
-            currSequence = mainSequence.slice(0);
-            this._playNotes(mainSequence);
+            this._playColor(mainSequence);
         }
     }
     
-    _playNotes=(sequence)=> {
+    _playColor=(sequence)=> {
         var i = 0;
         this.intervalId = setInterval(() => {
             this.setState({lit: sequence[i]});
+            setTimeout(() => this.setState({lit: 0}), 300);
             i++;
-            if (i >= sequence.length) {
-                setTimeout(() => this.setState({lit: 0}), 400);
+            if (i > sequence.length) {
+                this.setState({lit: 0});
                 clearInterval(this.intervalId);
             }
-        }, 400);
-        if(mainSequence.length >= bestScore){
-            bestScore = mainSequence.length
+        }, 600);
+        if(mainSequence.length > bestScore){
+            bestScore = (mainSequence.length - 1)
         }
     }
 
-    _renderTiles=()=>{
-        let result = [];
-        let i = 1;
-        let bgColors = ["", "", "#3275DD", "#D93333", "#64D23B", "#FED731", "black"];
-        for (var row = 0; row < 2; row++) {
-            for (var col = 0; col < 2; col++) {
-                var position = {
-                    left: col * CELL_SIZE + CELL_PADDING,
-                    top: row * CELL_SIZE + CELL_PADDING
-                };
-                result.push(this._renderTile(i++, position, {backgroundColor: bgColors[i]}, {backgroundColor: '#FF0B96'}));
-            }
-        }
-        return result;
+    _renderTiles=(i)=>{
+        let bgColors = ["#3275DD", "#D93333", "#64D23B", "#FED731", "black"];
+        return this._renderTile(i+1, {backgroundColor: bgColors[i]}, {backgroundColor: bgColors[4]});
     }
 
-    _renderTile=(id, position, bgColor, litBgColor)=>{
+
+    _renderTile=(id, bgColor, litBgColor)=>{
         return (
             <TouchableOpacity onPress={()=>this._playTheGame(id)}>
-                <View style={[styles.tile, position, this.state.lit == id ? litBgColor : bgColor]}>
+                <View style={[styles.tile, this.state.lit == id ? litBgColor : bgColor]}>
                     <Text style={styles.letter}>{id}</Text>
                 </View>
             </TouchableOpacity>
@@ -106,15 +107,22 @@ export default class Game extends React.Component {
 const styles = StyleSheet.create({
     container: {
         width: width,
-        height: height,
-        marginTop: CELL_SIZE/2
+        height: height-TILE_SIZE,
+        justifyContent:'space-around',
     },
     textBox:{
+        flexDirection:'row',
         alignItems:'center',
+        justifyContent:'space-around',
         fontSize:30
     },
+    gameBox:{
+        width:width,
+        flexDirection:'row',
+        justifyContent:'space-around',
+        padding:CELL_PADDING,
+    },
     tile: {
-        position: 'absolute',
         width: TILE_SIZE,
         height: TILE_SIZE,
         borderRadius: BORDER_RADIUS,
