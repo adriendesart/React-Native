@@ -1,37 +1,19 @@
 import React from 'react';
-import Welcome from '../SimonGame/homepage/welcome';
+import { Router, Scene } from 'react-native-router-flux'
+import Welcome from '../SimonGame/homepage/welcome'
 import Game from '../SimonGame/game/game'
-// import Game2 from '../AwesomeProject/game/game2'
-import {Alert} from 'react-native'
+import Game2 from '../SimonGame/game/game2'
 
 export default class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-        onHomePage : 0
-    };
-  }
-  onPressButton=(i)=>{
-    Alert.alert("Let's do it!");
-    this.setState({
-        onHomePage : 1
-    });
-  }
-
-  render() {
-    if(this.state.onHomePage == 0){
-      return (
-        <Welcome test={this.onPressButton}/>
-      );
-    } else if(this.state.onHomePage == 1){
-      return (
-        <Game/>
-      );
-    }
-    // } else if(this.state.onHomePage == 2){
-    //   return (
-    //     <Game2/>
-    //   );
-    // }
+  render(){
+    return(
+      <Router>
+        <Scene key = "root">
+           <Scene key = "welcome" component = {Welcome} title = "Welcome" initial = {true} />
+           <Scene key = "gameOriginal" component = {Game} title = "Original Game" />
+           <Scene key = "gameHardcore" component = {Game2} title = "Hardcore Game" />
+        </Scene>
+      </Router>
+    )
   }
 }

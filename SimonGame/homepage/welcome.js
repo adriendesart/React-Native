@@ -1,24 +1,28 @@
 import React from 'react';
-import { Alert, StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-export default class Welcome extends React.Component {
 
-    render() {
-
-        return (
-          <View style={styles.container}>
-            <Text style={styles.titre}>Imitate Simon</Text>
+const Welcome =()=> {
+    const goToGame = () => {
+        Actions.gameOriginal()
+    }
+    const goToGame2 = ()=>{
+        Actions.gameHardcore()
+    }
+    return (
+        <View style={styles.container}>
+            <Text style={styles.titre}>Simon says</Text>
             <Button 
                 title="Play Original Game"
-                onPress={this.props.test}
+                onPress={goToGame}
             />
-            {/* <Button 
+            <Button 
                 title="Play Hardcore Game"
-                onPress={this.props.test}
-            /> */}
-          </View>
-        );
-    }
+                onPress={goToGame2}
+            />
+        </View> 
+    );
 }
 
 const styles = StyleSheet.create({
@@ -32,3 +36,5 @@ const styles = StyleSheet.create({
         fontSize: 40
     },
 });
+
+export default Welcome

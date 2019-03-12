@@ -10,7 +10,7 @@
     2. [Initialiser le projet](#initialiser-le-projet)
 6. [Exercices](#exercices)
     1. [Faire une application "Make your choice" (Livecoding)](#faire-une-application-make-your-choice-Livecoding)
-    2. [Faire une application "puissance4"](#faire-une-application-puissance4)
+    2. [Faire une application "Simon says"](#faire-une-application-simon-says)
 7. [La documentation](#la-documentation)
 
 
@@ -64,8 +64,21 @@ RN permet d'utiliser et de modifier du code natif pour votre application. Vous p
 
 
 ## Exercices:
+
 ### Faire une application "Make your choice" (Livecoding)
-### Faire une application "puissance4"
+
+### Faire une application "Simon says"
+
+Pour cet exercice, nous te proposons de suivre étapes par étapes les instructions et de les réaliser par toi même. Cependant, comme nous savons que ce n'est pas évident et que tu aimerais avoir les solutions lorsque cela devient vraiment trop compliqué, nous mettons après chaque étapes la réponse détaillée. De plus l'application au complet est disponnible des les fichiers de ce repo si tu veux directement connaitre le résultat.
+
+1. 
+
+2. 
+
+3. 
+
+4. 
+
 
 ## La documentation:
 

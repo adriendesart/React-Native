@@ -23,7 +23,7 @@ export default class Game extends React.Component {
         super(props);
         this.state = {lit: 0};
     }
-
+    
     render() {
         return (
             <View style={styles.container}>
