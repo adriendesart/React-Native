@@ -67,10 +67,10 @@ export default class Game extends React.Component {
             this.setState({lit: sequence[i]});
             i++;
             if (i >= sequence.length) {
-                clearInterval(this.intervalId);
                 setTimeout(() => this.setState({lit: 0}), 400);
+                clearInterval(this.intervalId);
             }
-        }, 1000);
+        }, 400);
         if(mainSequence.length >= bestScore){
             bestScore = mainSequence.length
         }
@@ -101,7 +101,6 @@ export default class Game extends React.Component {
             </TouchableOpacity>
         )
     }
-
 }
 
 const styles = StyleSheet.create({
@@ -111,7 +110,8 @@ const styles = StyleSheet.create({
         marginTop: CELL_SIZE/2
     },
     textBox:{
-        alignItems:'center'
+        alignItems:'center',
+        fontSize:30
     },
     tile: {
         position: 'absolute',

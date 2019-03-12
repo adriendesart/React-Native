@@ -1,6 +1,6 @@
 import React from 'react';
-import Welcome from '../AwesomeProject/homepage/welcome';
-import Game from '../AwesomeProject/game/game'
+import Welcome from '../SimonGame/homepage/welcome';
+import Game from '../SimonGame/game/game'
 // import Game2 from '../AwesomeProject/game/game2'
 import {Alert} from 'react-native'
 
