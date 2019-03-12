@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 36217,
+  "expoServerNgrokUrl": "https://vm-7j2.anonymous.awesomeproject.exp.direct",
+  "packagerNgrokUrl": "https://packager.vm-7j2.anonymous.awesomeproject.exp.direct",
+  "ngrokPid": 36234,
+  "webpackServerPort": null
+}
