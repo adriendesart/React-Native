@@ -17,7 +17,7 @@ function random(min, max){
 
 let bestScore = 0;
 
-export default class Game extends React.Component {
+export default class Game3 extends React.Component {
     
     constructor(props) {
         super(props);
@@ -40,8 +40,12 @@ export default class Game extends React.Component {
                        {this._renderTiles(2)} 
                        {this._renderTiles(3)}  
                     </View>
+                    <View style={styles.gameBox}>
+                       {this._renderTiles(4)} 
+                       {this._renderTiles(5)}  
+                    </View>
                 </View>
-                <Button title="PLAY!" onPress={()=>this._resetTheGame()}/>
+                <Button title="PLAY HARDCORE!" onPress={()=>this._resetTheGame()}/>
             </View>
         );
     }
@@ -49,7 +53,7 @@ export default class Game extends React.Component {
     _resetTheGame=()=> {
         mainSequence = [];
         this.setState({lit: 0});
-        let startColor = random(1, 4);
+        let startColor = random(1, 6);
         mainSequence.push(startColor);
         currSequence = [];
         this._playColor(mainSequence);
@@ -65,8 +69,12 @@ export default class Game extends React.Component {
             }
         }
         if (gameOver == false && (currSequence.length == mainSequence.length)){
+            let a = mainSequence.length+1;
             currSequence = [];
-            mainSequence.push(random(1, 4));
+            mainSequence = [];
+            for(i=0;i<a;i++){
+                mainSequence.push(random(1, 6));
+            }
             this._playColor(mainSequence);
         }
     }
@@ -88,10 +96,9 @@ export default class Game extends React.Component {
     }
 
     _renderTiles=(i)=>{
-        let bgColors = ["#3275DD", "#D93333", "#64D23B", "#FED731", "black"];
-        return this._renderTile(i+1, {backgroundColor: bgColors[i]}, {backgroundColor: bgColors[4]});
+        let bgColors = ["#3275DD", "#D93333", "#64D23B", "#FED731","#F90EF2","#D2D2D2", "black"];
+        return this._renderTile(i+1, {backgroundColor: bgColors[i]}, {backgroundColor: bgColors[6]});
     }
-
 
     _renderTile=(id, bgColor, litBgColor)=>{
         return (

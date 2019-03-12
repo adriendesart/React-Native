@@ -8,6 +8,9 @@ const Welcome =()=> {
         Actions.gameOriginal()
     }
     const goToGame2 = ()=>{
+        Actions.gameMedium()
+    }
+    const goToGame3 = ()=>{
         Actions.gameHardcore()
     }
     return (
@@ -18,8 +21,12 @@ const Welcome =()=> {
                 onPress={goToGame}
             />
             <Button 
-                title="Play Hardcore Game"
+                title="Play Medium Game"
                 onPress={goToGame2}
+            />
+            <Button 
+                title="Play Hardcore Game"
+                onPress={goToGame3}
             />
         </View> 
     );
