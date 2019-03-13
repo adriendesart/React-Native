@@ -103,9 +103,7 @@ export default class Game3 extends React.Component {
     _renderTile=(id, bgColor, litBgColor)=>{
         return (
             <TouchableOpacity onPress={()=>this._playTheGame(id)}>
-                <View style={[styles.tile, this.state.lit == id ? litBgColor : bgColor]}>
-                    <Text style={styles.letter}>{id}</Text>
-                </View>
+                <View style={[styles.tile, this.state.lit == id ? litBgColor : bgColor]}/>
             </TouchableOpacity>
         )
     }
@@ -135,12 +133,5 @@ const styles = StyleSheet.create({
         borderRadius: BORDER_RADIUS,
         justifyContent: 'center',
         alignItems: 'center',
-      },
-      letter: {
-        color: 'white',
-        fontSize: LETTER_SIZE,
-        backgroundColor: 'transparent',
-        borderRadius: BORDER_RADIUS,
-        textAlign: 'center',
       },
 });
