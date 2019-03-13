@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert, Button} from 'react-native';
 
 const {width, height} = require('Dimensions').get('window');
-const CELL_SIZE = Math.floor(width * .5); // 20% of the screen width
-const CELL_PADDING = Math.floor(CELL_SIZE * .02); // 5% of the cell size
+const CELL_SIZE = Math.floor(width * .3);
+const CELL_PADDING = Math.floor(CELL_SIZE * .02);
 const BORDER_RADIUS = 100;
 const TILE_SIZE = CELL_SIZE - CELL_PADDING * 2;
 const LETTER_SIZE = 50;
