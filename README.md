@@ -99,7 +99,7 @@ La tâche qui vous est proposée ici est de réaliser le célèbre jeu "Simon sa
 
     * Ajouter du son sur les cases de couleurs
 
-    * Créer un mode de jeu "médium" et "hardcore" qui change les couleurs énumérées à chaque tout de jeu.
+    * Créer un mode de jeu "médium" et "hardcore" qui change les couleurs énumérées à chaque tour de jeu.
 
 *Astuce* : Je te conseil de faire un tableau dans lequel tu vas stocker les couleurs énumérée par le jeu et un tableau qui va accepter les entrées du joueurs. Compare ensuite ces deux tableaux pour savoir si le jeu est gagné ou pas.
 
@@ -109,9 +109,57 @@ La tâche qui vous est proposée ici est de réaliser le célèbre jeu "Simon sa
 
 Relativement simple, ce code permet de créer les "Routes" de notre application et de décider les différentes scènes de notre application. `initial = {true}` détermine la page d'accueil par définition. 
 
+---
+
 ![app.js](./imageTuto/welcomejs.png)
 
 Le component Welcome est un component stateless, dans celui-ci nous allons mettre nos boutons qui vont rediriger l'utilisateur vers les différents modes de jeu. `Actions` permet la redirection vers la route. 
+
+---
+
+![app.js](./imageTuto/stylewelcomejs.png)
+
+Nous y ajoutons un peu de style et de forme afin de rendre ca visuelement plus sympa.
+
+---
+
+![app.js](./imageTuto/game1.png)
+
+Les différentes variables que vous voyez ici sont utiliser afin de simplifier la rédaction et la mise en place du style. Seul `mainSequence` et `currSequence` sont réellement utilile.
+
+---
+
+![app.js](./imageTuto/game2.png)
+
+On crée ici notre component avec un state. Ce state `lit` représente l'id de la couleur à "éclairer" à un moment donné.
+
+Pour le reste, rien de très compliqué...
+
+---
+
+![app.js](./imageTuto/game5.png)
+
+Ici nous avons les deux fonctions qui vont créer les boutons avec leur propre couleur et leur données. C'est ici aussi que nous allons gérer (avec le state) "l'allumage" des boutons.
+
+---
+
+![app.js](./imageTuto/game3.png)
+ 
+La fonction `_resetTheGame` sert comme son nom l'indique à relancer la partie de zéro. On appelle cette fonction dans le boutton play du `render`
+
+La fonction `_playTheGame` quant à elle, va  comparer dans nos tableaus de jeux les cases qui se sont éclairée et celles sur lesquelles nous avons appuyés. 
+
+---
+
+![app.js](./imageTuto/game4.png)
+
+La fonction `_playColor` joue la partition de couleur et en profite pour écrire le `bestScore`.
+
+---
+
+![app.js](./imageTuto/game6.png)
+
+Pour terminer, nous ajoutons du style à notre application afin de la rendre plus agréable.
 
 ## La documentation:
 
