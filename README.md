@@ -65,20 +65,53 @@ RN permet d'utiliser et de modifier du code natif pour votre application. Vous p
 
 ## Exercices:
 
-### Faire une application "Make your choice" (Livecoding)
+### Faire une application "Carte d'identité" (Livecoding)
 
 ### Faire une application "Simon says"
 
-Pour cet exercice, nous te proposons de suivre étapes par étapes les instructions et de les réaliser par toi même. Cependant, comme nous savons que ce n'est pas évident et que tu aimerais avoir les solutions lorsque cela devient vraiment trop compliqué, nous mettons après chaque étapes la réponse détaillée. De plus l'application au complet est disponnible des les fichiers de ce repo si tu veux directement connaitre le résultat.
+![Le jeu Simon Says](./imageTuto/SimonDemo.gif)
 
-1. 
+**Présentation de l'exercice:** 
 
-2. 
+La tâche qui vous est proposée ici est de réaliser le célèbre jeu "Simon says". Pour ce faire je vous propose de réaliser par vous même les différentes scènes que je vous soumets. En plus de cela, je met à votre disposition le code détaillé de l'application si vous pensez être perdu. Bonne chance! 
 
-3. 
+1. Réalise un component d'acceuil "Welcome" 
 
-4. 
+![Page d'acceuil](./imageTuto/accueilSimonR.png)
 
+2. Réalise les routes de ton app avec react-native-router dans le fichier App.js
+
+3. Réalise un component "Game" contenant: 
+
+    * Une classe "Game" qui sera le rendu du jeu avec l'affichage du score, du best score, d'un bouton play et des cases de couleurs.
+
+    * Une fonction _RenderTiles et une autre _RederTile qui vont créer les 4 cases de couleurs.
+
+    * Une fonction _PlayColor qui "jouera" les couleurs déterminées par le jeu.
+
+    * Une fonction _PlayTheGame qui comparera les réponses entrée par le joueur avec la solution.
+
+    * Une fonction _ResetTheGame qui agira au clic du bouton play pour lancer la partie et la réinitialiser (sans réinitialiser le best score évidement).
+
+![Page Game](./imageTuto/originalGameR.png)
+
+4. Défi supplémentaires: 
+
+    * Ajouter du son sur les cases de couleurs
+
+    * Créer un mode de jeu "médium" et "hardcore" qui change les couleurs énumérées à chaque tout de jeu.
+
+*Astuce* : Je te conseil de faire un tableau dans lequel tu vas stocker les couleurs énumérée par le jeu et un tableau qui va accepter les entrées du joueurs. Compare ensuite ces deux tableaux pour savoir si le jeu est gagné ou pas.
+
+**_Détail du code:_**
+
+![app.js](./imageTuto/appjs.png)
+
+Relativement simple, ce code permet de créer les "Routes" de notre application et de décider les différentes scènes de notre application. `initial = {true}` détermine la page d'accueil par définition. 
+
+![app.js](./imageTuto/welcomejs.png)
+
+Le component Welcome est un component stateless, dans celui-ci nous allons mettre nos boutons qui vont rediriger l'utilisateur vers les différents modes de jeu. `Actions` permet la redirection vers la route. 
 
 ## La documentation:
 
